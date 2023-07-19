@@ -1,13 +1,70 @@
 {
   "name": "@elf2022/midi-writer-js-new",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "2.1.4",
+  "description": "A library providing an API for generating MIDI files.",
+  "main": "build/index.js",
+  "types": "types.d.ts",
+  "dependencies": {
+    "tonal-midi": "^0.69.7"
   },
-  "keywords": [],
-  "author": "",
-  "repository": {"url": "https://github.com/elf2022/midi-writer-js-new.git"},
-  "license": "ISC"
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-destructuring": "^7.9.5",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-babel": "^5.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.15.3",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jsdoc": "^3.6.4",
+    "minami": "^1.2.3",
+    "mocha": "^9.0.1",
+    "nyc": "^15.0.1",
+    "rollup": "^2.9.0",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2",
+    "watch": "^1.0.2"
+  },
+  "directories": {
+    "lib": "src",
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "mkdir -p build && rollup -c",
+    "docs": "./node_modules/.bin/jsdoc -r src README.md -d ./docs -t ./node_modules/minami",
+    "lint:js": "eslint 'src/**/**.ts'",
+    "prepublishOnly": "npm test",
+    "pretest": "npm run build",
+    "test": "nyc --reporter=text mocha --no-config --no-package",
+    "watch": "watch 'npm run build' src",
+    "postinstall": "node postinstall.js"
+  },
+  "runkitExampleFilename": "runkit.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elf2022/midi-writer-js-new.git"
+  },
+  "keywords": [
+    "midi",
+    "generator",
+    "music"
+  ],
+  "author": "Garrett Grimm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elf2022/midi-writer-js-new.git"
+  },
+  "homepage": "https://github.com/elf2022/midi-writer-js-new#README",
+  "publishConfig": {
+    "@grimmdude:registry": "https://npm.pkg.github.com"
+  }
 }
