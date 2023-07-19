@@ -65,6 +65,6 @@
   },
   "homepage": "https://github.com/elf2022/midi-writer-js-new#README",
   "publishConfig": {
-    "@grimmdude:registry": "https://npm.pkg.github.com"
+    "@elf2022:registry": "https://npm.pkg.github.com"
   }
 }
