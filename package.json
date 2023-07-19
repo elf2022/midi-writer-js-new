@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "@elf2022/midi-writer-js-new",
   "version": "2.1.4",
   "description": "A library providing an API for generating MIDI files.",
